@@ -189,6 +189,7 @@ input:focus,textarea:focus{outline:none;background:var(--field-hover);box-shadow
   .hero .sub{grid-row:3;margin-top:44px;max-width:32ch}
   .hero .btn{grid-row:4;justify-self:start;margin-top:32px}
   .opening p{padding-top:0}
+  .touch{padding-block:0}
   .collage{padding-bottom:42.2%}
   .collage > figure{width:86%}
   .collage .tall-wrap{width:44%}
@@ -377,7 +378,7 @@ input:focus,textarea:focus{outline:none;background:var(--field-hover);box-shadow
     var dpr = Math.min(2, devicePixelRatio || 1);
     W = stage.getBoundingClientRect().width;
     VERT = innerWidth < 761;              // phone: the scene stands upright, one hand from above, one from below
-    X0 = TIP_X - (HW = VERT ? 270 : 599); // the meeting point lands on the centre line
+    X0 = TIP_X - (HW = VERT ? 340 : 599); // the meeting point lands on the centre line
     if (VERT){ scale = W * 0.9 / 372; XOFF = (W - 372 * scale) / 2; H = Math.round(2 * HW * scale); }
     else { scale = W / (2 * HW); H = Math.round(372 * scale); }
     stage.style.height = H + 'px';
@@ -400,8 +401,8 @@ input:focus,textarea:focus{outline:none;background:var(--field-hover);box-shadow
       target = 1 - smooth(span * 0.025, span * 0.2, d);
     } else if (VERT){
       // on a phone they also meet as the meeting point crosses the middle of the screen
-      var mid = stage.getBoundingClientRect().top + ty - innerHeight / 2;
-      target = 1 - smooth(innerHeight * 0.06, innerHeight * 0.16, Math.abs(mid));
+      var meet = stage.getBoundingClientRect().top + ty;          // meeting point, in viewport px
+      target = smooth(innerHeight * 0.95, innerHeight * 0.5, meet); // 0 as it enters at the bottom, 1 by mid-screen
     }
     if (reduce) k = target;
     else { vel += (target - k) * 0.12; vel *= 0.72; k += vel; }
@@ -424,7 +425,7 @@ input:focus,textarea:focus{outline:none;background:var(--field-hover);box-shadow
       var y = r * chh + chh / 2;
       for (var c = 0; c < cols; c++){
         var x = c * cell + cell / 2, sx, sy, fade;
-        if (VERT){ sx = y / scale + X0; sy = Y0 + 372 - (x - XOFF) / scale; if (sy < Y0) continue; fade = Math.min(1, y / edge, (H - y) / edge); }
+        if (VERT){ sx = y / scale + X0; sy = Y0 + 372 - (x - XOFF) / scale; if (sy < Y0) continue; var e2 = Math.min(y, H - y) / (H * 0.34); e2 = Math.max(0, Math.min(1, e2)); fade = e2 * e2 * (3 - 2 * e2); }
         else { sx = x / scale + X0; sy = y / scale + Y0; fade = Math.min(1, x / edge, (W - x) / edge); }
         var lx = sx + off, rx2 = sx - SPLIT - off;
         var v = fade * Math.max(
