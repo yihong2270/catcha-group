@@ -190,9 +190,11 @@ input:focus,textarea:focus{outline:none;background:var(--field-hover);box-shadow
   .hero .btn{grid-row:4;justify-self:start;margin-top:32px}
   .opening p{padding-top:0}
   .touch{padding-block:0}
-  .collage{padding-bottom:42.2%}
-  .collage > figure{width:86%}
-  .collage .tall-wrap{width:44%}
+  .collage{padding-bottom:21.7%}
+  .collage > figure{width:88%}
+  .collage .wide{aspect-ratio:1.4}
+  .collage .tall-wrap{width:46%}
+  .collage .tall{aspect-ratio:.92;object-position:50% 0%}
   form{grid-template-columns:minmax(0,1fr)}
   .send .btn{width:100%}
   .say p{max-width:none}
@@ -378,8 +380,8 @@ input:focus,textarea:focus{outline:none;background:var(--field-hover);box-shadow
     var dpr = Math.min(2, devicePixelRatio || 1);
     W = stage.getBoundingClientRect().width;
     VERT = innerWidth < 761;              // phone: the scene stands upright, one hand from above, one from below
-    X0 = TIP_X - (HW = VERT ? 340 : 599); // the meeting point lands on the centre line
-    if (VERT){ scale = W * 0.9 / 372; XOFF = (W - 372 * scale) / 2; H = Math.round(2 * HW * scale); }
+    X0 = TIP_X - (HW = VERT ? 280 : 599); // the meeting point lands on the centre line
+    if (VERT){ scale = W / 372; XOFF = (W - 372 * scale) / 2; H = Math.round(2 * HW * scale); }
     else { scale = W / (2 * HW); H = Math.round(372 * scale); }
     stage.style.height = H + 'px';
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
@@ -425,7 +427,7 @@ input:focus,textarea:focus{outline:none;background:var(--field-hover);box-shadow
       var y = r * chh + chh / 2;
       for (var c = 0; c < cols; c++){
         var x = c * cell + cell / 2, sx, sy, fade;
-        if (VERT){ sx = y / scale + X0; sy = Y0 + 372 - (x - XOFF) / scale; if (sy < Y0) continue; var e2 = Math.min(y, H - y) / (H * 0.34); e2 = Math.max(0, Math.min(1, e2)); fade = e2 * e2 * (3 - 2 * e2); }
+        if (VERT){ sx = y / scale + X0; sy = Y0 + 372 - (x - XOFF) / scale; if (sy < Y0) continue; var e2 = Math.min(y, H - y) / (H * 0.14); e2 = Math.max(0, Math.min(1, e2)); fade = e2 * e2 * (3 - 2 * e2); }
         else { sx = x / scale + X0; sy = y / scale + Y0; fade = Math.min(1, x / edge, (W - x) / edge); }
         var lx = sx + off, rx2 = sx - SPLIT - off;
         var v = fade * Math.max(
