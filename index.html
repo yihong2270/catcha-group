@@ -120,6 +120,7 @@ p{text-wrap:pretty}
 .ledger li:last-child{border-bottom:1px solid rgba(237,235,230,.14)}
 .ledger .co{grid-column:1 / 5;display:flex;flex-direction:column;gap:4px}
 .ledger h3{font-size:var(--step-h3);line-height:1.15;letter-spacing:-.015em}
+.ledger .out .nw{font-size:inherit;color:inherit;white-space:nowrap}
 .ledger .co span,.ledger .out span{font-size:15px;color:var(--ink-2)}
 .ledger .what{grid-column:5 / 9;font-size:17px;line-height:1.5;color:var(--ink-2);max-width:40ch}
 .ledger .out{grid-column:9 / 13;display:flex;flex-direction:column;gap:4px;font-size:17px;line-height:1.4}
@@ -311,22 +312,22 @@ input:focus,textarea:focus{outline:none;background:var(--field-hover);box-shadow
       <div class="grid opening">
         <h2 id="t-record" data-in>Track record</h2>
       </div>
-      <h3 class="group" data-in>Exits</h3>
+      <h3 class="group" data-in>Past portfolio</h3>
       <ul class="ledger">
         <li data-in>
           <div class="co"><h3>iProperty Group</h3><span>Property tech</span></div>
           <p class="what">Market-leading property portals in Malaysia, Indonesia, Thailand, Hong Kong and Singapore.</p>
-          <div class="out"><strong>Exited to REA Group</strong><span>ASX: IPP · 2016 · US$532m</span></div>
+          <div class="out"><strong>Acquired by REA Group <span class="nw">(ASX: REA)</span></strong><span>ASX: IPP · 2016 · US$532m</span></div>
         </li>
         <li data-in>
           <div class="co"><h3>iCar Asia</h3><span>Automotive tech</span></div>
           <p class="what">Leading online automotive platform in Malaysia, Indonesia and Thailand.</p>
-          <div class="out"><strong>Exited to Carsome</strong><span>ASX: ICQ · 2022 · US$200m+</span></div>
+          <div class="out"><strong>Acquired by Carsome</strong><span>ASX: ICQ · 2022 · US$200m</span></div>
         </li>
         <li data-in>
           <div class="co"><h3>REV Asia</h3><span>Digital media</span></div>
           <p class="what">One of Malaysia's leading digital media groups.</p>
-          <div class="out"><strong>Exited to Media Prima</strong><span>2017 · US$24m</span></div>
+          <div class="out"><strong>Acquired by Media Prima Berhad <span class="nw">(KLSE: MEDIA)</span></strong><span>KLSE: REV · 2017 · US$24m</span></div>
         </li>
       </ul>
       <h3 class="group" data-in>Live portfolio</h3>
@@ -339,7 +340,7 @@ input:focus,textarea:focus{outline:none;background:var(--field-hover);box-shadow
         <li data-in>
           <div class="co"><h3>Catcha Digital Berhad</h3><span>Multi-sector serial acquirer</span></div>
           <p class="what">Owns and operates market-leading businesses in digital media, B2B exhibitions and technology.</p>
-          <div class="out"><strong>Listed on Bursa Malaysia</strong><span>Bursa: CATCHA</span></div>
+          <div class="out"><strong>Listed on the KLSE</strong><span>KLSE: CATCHA</span></div>
         </li>
         <li data-in>
           <div class="co"><h3>ICON1C</h3><span>Luxury experiences</span></div>
@@ -361,7 +362,7 @@ input:focus,textarea:focus{outline:none;background:var(--field-hover);box-shadow
           <div class="bio">
             <h3>Patrick Grove</h3>
             <p class="role">Co-founder and Group CEO</p>
-            <p>Founded Catcha in 1999 and has taken companies from start-up to public listing on the ASX and Bursa Malaysia, including iProperty, iCar Asia and Frontier Digital Ventures.</p>
+            <p>Founded Catcha in 1999 and has taken seven companies from start-up to IPO on the ASX, KLSE and NYSE over nearly 30 years, including iProperty, iCar Asia and Frontier Digital Ventures.</p>
           </div>
         </article>
         <article data-in style="--d:2">
@@ -369,7 +370,7 @@ input:focus,textarea:focus{outline:none;background:var(--field-hover);box-shadow
           <div class="bio">
             <h3>Luke Elliott</h3>
             <p class="role">Co-founder</p>
-            <p>Co-founded Catcha, with experience in building <span style="white-space:nowrap">fast-moving</span> online business models, monetising media assets and executing mergers and acquisitions, capital raisings and public listings.</p>
+            <p>Co-founded Catcha, with experience in building <span style="white-space:nowrap">fast-moving</span> online business models, monetising media assets and executing more than 80 mergers and acquisitions, capital raisings and public listings.</p>
           </div>
         </article>
       </div>
