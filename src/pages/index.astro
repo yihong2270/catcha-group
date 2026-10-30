@@ -1,0 +1,146 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+const { meta, hero, about, record, principals, contact } = site;
+---
+<Base>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#main" aria-label="Catcha Group, top of page"><img src="/images/logo.png" alt="Catcha Group" width="100" height="42"></a>
+    <nav aria-label="Primary">
+      <a class="navlink" href="#about">About</a>
+      <a class="navlink wide-only" href="#record">Track record</a>
+      <a class="navlink wide-only" href="#principals">Principals</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero intro dark" aria-labelledby="t-hero">
+    <div class="wrap grid">
+      <div class="hero-copy">
+        <h1 id="t-hero">{hero.lines.map((line, i) => <span class="ln"><span style={`--d:${i}`}>{line}</span></span>)}</h1>
+        <p class="sub" data-in style="--d:4">{hero.sub}</p>
+        <a class="btn" href="#contact" data-in style="--d:5">Get in touch
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="emblem"><img src="/images/spiral.png" alt="The Catcha Group spiral emblem" width="606" height="653"></div>
+    </div>
+  </section>
+
+  <section class="about light" id="about" aria-labelledby="t-about">
+    <div class="wrap">
+      <div class="grid opening">
+        <h2 id="t-about" data-in>About us</h2>
+      </div>
+      <div class="collage">
+        <figure data-in><img class="wide" src="/images/singapore.jpg" alt="Singapore's Marina Bay skyline" width="1200" height="618" loading="lazy"></figure>
+        <div class="tall-wrap" data-in style="--d:3"><figure><img class="tall" src="/images/kuala-lumpur.jpg" alt="The Petronas Towers, Kuala Lumpur" width="740" height="1008" loading="lazy"></figure></div>
+      </div>
+      <div class="story">
+        <div class="grid row">
+          <h3 data-in>Our history</h3>
+          <div class="text" data-in style="--d:1">
+            <p>{about.history}</p>
+          </div>
+        </div>
+        <div class="grid row">
+          <h3 data-in>Working with founders</h3>
+          <div class="text" data-in style="--d:1">
+            <ul class="points">
+              {about.points.map((p) => <li><strong>{p.lead}</strong> {p.text}</li>)}
+            </ul>
+            <p class="close">{about.close}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="record dark" id="record" aria-labelledby="t-record">
+    <div class="wrap">
+      <div class="grid opening">
+        <h2 id="t-record" data-in>Track record</h2>
+      </div>
+      {record.map((g) => (
+        <Fragment>
+          <h3 class="group" data-in>{g.group}</h3>
+          <ul class="ledger">
+            {g.items.map((c) => (
+              <li data-in>
+                <div class="co"><h3>{c.name}</h3><span>{c.sector}</span></div>
+                <p class="what">{c.what}</p>
+                <div class="out"><strong>{c.outcome}{c.ticker && <Fragment> <span class="nw">({c.ticker})</span></Fragment>}</strong><span>{c.detail}</span></div>
+              </li>
+            ))}
+          </ul>
+        </Fragment>
+      ))}
+    </div>
+  </section>
+
+  <section class="principals light" id="principals" aria-labelledby="t-principals">
+    <div class="wrap">
+      <div class="grid opening">
+        <h2 id="t-principals" data-in>Principals</h2>
+      </div>
+      <div class="people">
+        {principals.map((p, i) => (
+          <article data-in style={i ? `--d:${i * 2}` : undefined}>
+            <figure class="ph"><img src={p.photo} alt={p.name} width={p.width} height={p.height} loading="lazy"></figure>
+            <div class="bio">
+              <h3>{p.name}</h3>
+              <p class="role">{p.role}</p>
+              <p set:html={p.bio} />
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="touch dark" aria-label="Two hands, after Michelangelo">
+    <div class="wrap"><div class="stage" id="stage">
+      <canvas id="hands" role="img" aria-label="Two hands almost touching, after Michelangelo's Creation of Adam, drawn in characters. They touch when you point between them."></canvas>
+    </div></div>
+  </section>
+
+  <section class="contact light" id="contact" aria-labelledby="t-contact">
+    <div class="wrap grid">
+      <div class="say">
+        <h2 id="t-contact" data-in>{contact.heading}</h2>
+        <p data-in style="--d:1">{contact.line}</p>
+        <a class="mail" href={`mailto:${meta.email}`} data-in style="--d:2">{meta.email}</a>
+      </div>
+      <div class="formbox" id="formbox" data-in style="--d:2">
+        <form id="form" novalidate>
+          <div class="field"><label for="f1">First name</label><input id="f1" name="first" autocomplete="given-name" required></div>
+          <div class="field"><label for="f2">Last name</label><input id="f2" name="last" autocomplete="family-name"></div>
+          <div class="field full"><label for="f3">Email</label><input id="f3" name="email" type="email" autocomplete="email" required></div>
+          <div class="field full"><label for="f4">Message</label><textarea id="f4" name="message" required></textarea></div>
+          <div class="send"><button class="btn" type="submit">Send</button></div>
+        </form>
+        <div class="thanks" role="status" aria-live="polite">
+          <h3>Thanks for submitting!</h3>
+          <p>Your email app has opened with your message, ready to send to {meta.email}.</p>
+          <button class="btn" type="button" id="again">Write another</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot dark">
+  <div class="wrap">
+    <img src="/images/logo.png" alt="Catcha Group" width="100" height="42">
+    <span>© 2026 Catcha Group · <a href={`mailto:${meta.email}`}>{meta.email}</a></span>
+  </div>
+</footer>
+
+<div class="pt-ring" id="ring" aria-hidden="true"><span></span></div>
+<div class="pt" id="pt" aria-hidden="true"><span></span></div>
+</Base>

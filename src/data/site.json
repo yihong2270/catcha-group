@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "Catcha Group — Entrepreneurs for Entrepreneurs",
+    "description": "Catcha Group is a family office in Southeast Asia, building and backing market-leading businesses since 1999.",
+    "email": "enquiries@catchagroup.com"
+  },
+  "hero": {
+    "lines": ["Entrepreneurs for", "Entrepreneurs."],
+    "sub": "A family office in Southeast Asia, building and backing market-leading businesses since 1999."
+  },
+  "about": {
+    "history": "Since 1999, Catcha Group has been building and backing category-defining businesses across Southeast Asia. We have a proven history of seeing opportunities early, moving fast, and executing with discipline — from launching market-leading platforms to taking companies public. Over two decades, we've operated through every market cycle, scaling ideas into industry leaders and building a reputation for turning bold visions into real outcomes.",
+    "points": [
+      { "lead": "Principal-led.", "text": "A family office run by its principals, so you deal directly with the people who decide." },
+      { "lead": "Our own capital.", "text": "We invest our own money in every deal and stand shoulder-to-shoulder with the teams we back." },
+      { "lead": "Hands-on.", "text": "We work side by side with founders to unlock growth, sharpen strategy and build long-term value." }
+    ],
+    "close": "We only bet where we are willing to put our own money, energy and expertise on the line."
+  },
+  "record": [
+    {
+      "group": "Past portfolio",
+      "items": [
+        { "name": "iProperty Group", "sector": "Property tech", "what": "Market-leading property portals in Malaysia, Indonesia, Thailand, Hong Kong and Singapore.", "outcome": "Acquired by REA Group", "ticker": "ASX: REA", "detail": "ASX: IPP · 2016 · US$532m" },
+        { "name": "iCar Asia", "sector": "Automotive tech", "what": "Leading online automotive platform in Malaysia, Indonesia and Thailand.", "outcome": "Acquired by Carsome", "detail": "ASX: ICQ · 2022 · US$200m" },
+        { "name": "REV Asia", "sector": "Digital media", "what": "One of Malaysia's leading digital media groups.", "outcome": "Acquired by Media Prima Berhad", "ticker": "KLSE: MEDIA", "detail": "KLSE: REV · 2017 · US$24m" }
+      ]
+    },
+    {
+      "group": "Live portfolio",
+      "items": [
+        { "name": "Frontier Digital Ventures", "sector": "Online classifieds", "what": "Online property, automotive and general classifieds across Latin America, Asia and North Africa.", "outcome": "Listed on the ASX since 2016", "detail": "ASX: FDV" },
+        { "name": "Catcha Digital Berhad", "sector": "Multi-sector serial acquirer", "what": "Owns and operates market-leading businesses in digital media, B2B exhibitions and technology.", "outcome": "Listed on the KLSE", "detail": "KLSE: CATCHA" },
+        { "name": "ICON1C", "sector": "Luxury experiences", "what": "Live events, hospitality and private members' clubs, including Mandala Club, Amber Lounge and 1880.", "outcome": "Operating across four cities", "detail": "Singapore · Monaco · Abu Dhabi · Las Vegas" }
+      ]
+    }
+  ],
+  "principals": [
+    {
+      "name": "Patrick Grove", "role": "Co-founder and Group CEO",
+      "photo": "/images/patrick-grove.webp", "width": 631, "height": 680,
+      "bio": "Founded Catcha in 1999 and has taken seven companies from start-up to IPO on the ASX, KLSE and NYSE over 30 years, including iProperty, iCar Asia and Frontier Digital Ventures."
+    },
+    {
+      "name": "Luke Elliott", "role": "Co-founder and Executive Director",
+      "photo": "/images/luke-elliott.webp", "width": 738, "height": 680,
+      "bio": "Co-founded Catcha, with experience in building <span style=\"white-space:nowrap\">fast-moving</span> online business models, monetising media assets and executing more than 80 mergers and acquisitions, capital raisings and public listings."
+    }
+  ],
+  "contact": {
+    "heading": "Let's chat.",
+    "line": "A family office operated by its principals, investing its own capital in extraordinary businesses."
+  }
+}
